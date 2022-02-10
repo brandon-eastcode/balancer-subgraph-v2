@@ -2,7 +2,7 @@ import * as fs from 'fs-extra';
 import * as path from 'path';
 import * as glob from 'glob';
 
-const coreArtifactPath = path.resolve(__dirname, '../../core/pkg/core/artifacts');
+const coreArtifactPath = path.resolve(__dirname, '../../balancer3/pkg/core/artifacts');
 const outputPath = path.resolve(__dirname, '../abis');
 
 const abiJSONfilenames = [
