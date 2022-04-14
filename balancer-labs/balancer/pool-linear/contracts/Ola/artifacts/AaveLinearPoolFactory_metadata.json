@@ -1,0 +1,563 @@
+{
+	"compiler": {
+		"version": "0.7.1+commit.f4a555be"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IVault",
+						"name": "vault",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					}
+				],
+				"name": "PoolCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "mainToken",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IERC20",
+						"name": "wrappedToken",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "upperTarget",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFeePercentage",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "create",
+				"outputs": [
+					{
+						"internalType": "contract LinearPool",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCreationCode",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCreationCodeContracts",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "contractA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "contractB",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPauseConfiguration",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "pauseWindowDuration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bufferPeriodDuration",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getVault",
+				"outputs": [
+					{
+						"internalType": "contract IVault",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					}
+				],
+				"name": "isPoolFromFactory",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"create(string,string,address,address,uint256,uint256,address)": {
+					"details": "Deploys a new `AaveLinearPool`."
+				},
+				"getCreationCode()": {
+					"details": "Returns the creation code of the contract this factory creates."
+				},
+				"getCreationCodeContracts()": {
+					"details": "Returns the two addresses where the creation code of the contract crated by this factory is stored."
+				},
+				"getPauseConfiguration()": {
+					"details": "Returns the current `TemporarilyPausable` configuration that will be applied to Pools created by this factory. `pauseWindowDuration` will decrease over time until it reaches zero, at which point both it and `bufferPeriodDuration` will be zero forever, meaning deployed Pools will not be pausable."
+				},
+				"getVault()": {
+					"details": "Returns the Vault's address."
+				},
+				"isPoolFromFactory(address)": {
+					"details": "Returns true if `pool` was created by this factory."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"pkg/pool-linear/contracts/aave/AaveLinearPoolFactory.sol": "AaveLinearPoolFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"pkg/asset-manager-utils/contracts/IAssetManager.sol": {
+			"keccak256": "0x3e3836d125a341cb3306f516da3ff28eb861895a70dbea199cb89e905b664387",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://3f40a1a0aecce6daa1135e2e0fa173f062aa54fcc17f91a9e69b8dfde939a344",
+				"dweb:/ipfs/QmayPdbgSe4xPuEeMUxj5RqW2mqScre3M7o6S7ESamZzD7"
+			]
+		},
+		"pkg/pool-linear/contracts/LinearMath.sol": {
+			"keccak256": "0xba88296dd4d0b194d478de950eb74cc811b227a6806f023d32757f48a8560d06",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ce149f03ec7455951680781c1cb263a2ab2e1053d1ebec93b1772132eccad312",
+				"dweb:/ipfs/QmQKt4GkKmBzNzw7aCur43vsxM1FAEfUiUVbbgaMTS2DcH"
+			]
+		},
+		"pkg/pool-linear/contracts/LinearPool.sol": {
+			"keccak256": "0xad1a0099f52e975f57471a79479cfcb49dbf548c225e1ef7084d33216eae2982",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://acafaf454d28c66b195142517beec852b5c2f6132f976e64bba3854e7e0522a2",
+				"dweb:/ipfs/QmTqxKLQytzvK2esLzaZjXsg7h5aeCHzNwet21bU5dFtTd"
+			]
+		},
+		"pkg/pool-linear/contracts/LinearPoolUserData.sol": {
+			"keccak256": "0x3284d8a030d854a565853872c50ceded08f40c2ac4ec2237928b518b2131d431",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ab65f855a674a846e4d100f2003099a8a793c15458fc45934055c883383991a4",
+				"dweb:/ipfs/QmTmjNcdDPFEs4dpYxHeBNJNWDq72VCNpKtZzaukbDq2ED"
+			]
+		},
+		"pkg/pool-linear/contracts/aave/AaveLinearPool.sol": {
+			"keccak256": "0x7484734700bea7c9f767a8e6d716471d83d06308792ace9b2d51f7df54ef36ed",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ec86d73e2f43e8e50b62b0ab4069410a907887f4a102c442493b5431465bab9d",
+				"dweb:/ipfs/QmWr5uA8sdkhktQvqumsQbvAPS4KqzpvngUaoRGsh8xnLZ"
+			]
+		},
+		"pkg/pool-linear/contracts/aave/AaveLinearPoolFactory.sol": {
+			"keccak256": "0x29e12f188e19716e14b344f9cf94e57c01f76634f80d99e28f5139e3d2a4fe43",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://3d048fd16e92b63ebb4f0070bbc6f618bf6a03bcdb398193da1cf1404fcb7103",
+				"dweb:/ipfs/QmRT82rAqhLCgueTgJvv3NCaw3wjsgvz7sMkupjL7TGDji"
+			]
+		},
+		"pkg/pool-linear/contracts/interfaces/ILendingPool.sol": {
+			"keccak256": "0x80a902962bde445ab4e16c5a8bd4958770a9af8cc8b05fabc7def009b02c6069",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://fbe63e7d49dcb105cd16840300c4f650c4435ef992e38e42606d0f3dccb3a420",
+				"dweb:/ipfs/QmaCA6XCZFHWgWdHYfoPZRJhr7KXSeWaJnucBRcATCturk"
+			]
+		},
+		"pkg/pool-linear/contracts/interfaces/IStaticAToken.sol": {
+			"keccak256": "0x7bca7e5b69f43012117b51f29ff62d77ce393d9b62c4c589919561643c039584",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c05f9c0a9804dc3a3d63c007a47ab369683b81e5544564c4e690eb02129c69cf",
+				"dweb:/ipfs/QmQHXWtCkSiYZKAp8u297wjer2WB52eSRGTjWVKQuFind5"
+			]
+		},
+		"pkg/pool-utils/contracts/BalancerPoolToken.sol": {
+			"keccak256": "0xcfb49f9e3231a263dd25ae3e413deeceb2b2050bc19a63fc7f9b74b984b249e5",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://6421122159d12ffa42408ce61156909b91c69939685d14cef217a953c03e9aa2",
+				"dweb:/ipfs/QmXasTesiVmV1ritaCq2ftkQ16eKdDQjxYE3GvNyQiL8DR"
+			]
+		},
+		"pkg/pool-utils/contracts/BasePoolAuthorization.sol": {
+			"keccak256": "0xa7220a9ab1ece8ad3a1784addabf6a274a305bd669b662e71cc21f13732f123b",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c6fe0125740cf66da03cfcd15c49eedaefb8a3a6c662672aacaf7d63613fbb16",
+				"dweb:/ipfs/QmPF4c4vGZp4gUh7bcGcNpHxokGcx6ubNkbdC4rwEFDHft"
+			]
+		},
+		"pkg/pool-utils/contracts/LegacyBasePool.sol": {
+			"keccak256": "0x4ee060454b3a190837bb05124d7f3942e8a1f51d4064c1ef751033f3ad917752",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://3e63eaac0adc74c219704cd7dacb494f03013681c2851daaeb864775538c0c89",
+				"dweb:/ipfs/Qmab5obkS8rMPoGAahagFAdESjMmDo6CF6sV64Wmq2V9ci"
+			]
+		},
+		"pkg/pool-utils/contracts/factories/BasePoolSplitCodeFactory.sol": {
+			"keccak256": "0x3098ade4ce8b75b9beed0c87d1870488bd46a7c4d6d7b3ac85d4cf8ae32b5d49",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://788d0ba69b6052a79262aa287fb15c79acee8b475092a2e70d4dda90882e221d",
+				"dweb:/ipfs/QmXvuwkGwyjwmRZhyfdguS91VT5yaBQtN8FoHSuHJF4yi9"
+			]
+		},
+		"pkg/pool-utils/contracts/factories/FactoryWidePauseWindow.sol": {
+			"keccak256": "0x7d764b70fdb9f4d2b07f2914ff5deec66f1bc193741017afef2fa14be57dc4ef",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8184f7aea4afaa63bff9352da02293d8423d71a394620d561c7e861fde12f921",
+				"dweb:/ipfs/QmRdokGbResxbERJ72ofPNkK2PTivkBQ6W3mJPxTJ3oqBU"
+			]
+		},
+		"pkg/pool-utils/contracts/interfaces/IRateProvider.sol": {
+			"keccak256": "0x9f35f065d838cfeffaa7d085b3c204f9cdb8ab32b4b843957a851a55339980c1",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://f8c0057b70b373133433619b1ee98b58bd8d1082c9d8bda7e9837ca3b46f6cd6",
+				"dweb:/ipfs/QmVoCVhSnnknSavEZV1FY3hVkivuBqS2Crk6B1dHTXyYLt"
+			]
+		},
+		"pkg/pool-utils/contracts/rates/PriceRateCache.sol": {
+			"keccak256": "0x13295fdc9cfce5fb2e0e97973193fe23fda27b9036178363cc7e13d5dc45375c",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c4a1548f12ef3433b5a90b5e4c28a43e785df53678d8053c468855520f855856",
+				"dweb:/ipfs/QmW7VpwZfdH3t9QL5HbUBcSkChRcSaCMCZkuRr9MKVu1gN"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/Authentication.sol": {
+			"keccak256": "0xea892213ec2967f53e26a0dd833bde01e4d9b6e49dd91e6c59ff00044f83c28d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://0bc36f6335254bef8a4515e898a7ce5b3f36350e4d7d1dd45a0aa3d1356fdae5",
+				"dweb:/ipfs/QmRRatu77hTPReUnRidk3wjgEMyGYVgh9wDrkiMiKmtWtR"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/BalancerErrors.sol": {
+			"keccak256": "0xc9fd86f03fa1434694dd42eddd0d9e4cb3289ef143cae5ea977b86d5e95ad41d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2048e536f51fa3b3f94431da4f3281e3510a06f6947abb173c6b5cd22ec3cce2",
+				"dweb:/ipfs/QmbH6E91rYD5zbS1Zdc4BW391ZysKxV2yLAYCAAMNzRYWr"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/BaseSplitCodeFactory.sol": {
+			"keccak256": "0x3e2981793763ecb3a1ddebaef556d0289d5415085392c28c51043a0d64e77c4e",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://7679f70827df1adcc8bf47d031dd3945138649177fc150088f3243822cc375bd",
+				"dweb:/ipfs/Qmcy318aLEwKyRrVM55JoX9QsZ9PPGpGRzHCTAuLuppU1v"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/CodeDeployer.sol": {
+			"keccak256": "0xfeb244ff55cfa33a17a1cef41ea065c651cb00f375d4139e1c6de805c7d9c17d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://1e6acd92e272d1e307175f3d71e95161dcd89924344aafe3d56b6bc40c3a839e",
+				"dweb:/ipfs/QmecpwA5cRGNTQmmRkERb2uuxJfHcDH4V7Z6nLC8mPNHbc"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/ERC20Helpers.sol": {
+			"keccak256": "0xc47ad45aa3a4f6f5118eb1b092de06c01efe890b0f736e76a41e2d7eddbfe488",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://e92a8b561c5f792a15882a41d89c2b6fae8f635ab2e12b8a82f30877652e5b3d",
+				"dweb:/ipfs/QmZ5jNL2pjLFU454rN7kje9khztknrkPNrSZeY15Rf4mm9"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/IAuthentication.sol": {
+			"keccak256": "0xfd687ced203d2c6da8189792e1719a5182faf45956129388b231ee76740b99a6",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://581aa664e84e950cd9bb747bf6022867db63c64f67d9556a86b5f04f871c2c5d",
+				"dweb:/ipfs/QmRa6EEV3LXJaHzymztiLqyeAzmE4jAgBEEi3mi8R5cfFa"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/ISignaturesValidator.sol": {
+			"keccak256": "0x2fe46b13b7c8bfc6f5c539c0b73d6325813f383f551b71fb6bca8dafd06964e1",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8e651ae7a3a3652c8bb7aaa42c2cce5924310df62a923d9ec50ddb9c850d2995",
+				"dweb:/ipfs/QmTHz9y18L5FD7v9GcvxGWSLJuin2KCUEYoARTgz8njce8"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/ITemporarilyPausable.sol": {
+			"keccak256": "0xb3e5b7c63f80b80ef3f0138eac56c397a439bf6b667fc06d5061aa869828b562",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://978d66fba0721a1a67e29a32eaddab8d1f92ab2fb2d611724ea8d0d3c9b0e95b",
+				"dweb:/ipfs/QmfG4foZvx3NDZao7d4VvGzL4Uxtk8VWNJXvgo9fiAJxZv"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/InputHelpers.sol": {
+			"keccak256": "0x9899df7be5dfd3e2dd686140de070594c1882ac78529ca8cb2848fc7ddbdcf2e",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://71138e132065c6ed94b815f7efc9c5f556090926d504ba4c6dd7ce93eb7b32fa",
+				"dweb:/ipfs/QmP8DgfkYbdRuaa8YAERpTjf5c5fwZpm9jP6uiz4jw3QoD"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/TemporarilyPausable.sol": {
+			"keccak256": "0xc2f8afde456420ea386c4456cfcb8f5cbc526dd78dd06dfe7ed229a122e316d9",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://6155b08e3e84f259dde4a9fba19f3ca83510a782248ea196a2e049ab58ff0231",
+				"dweb:/ipfs/QmSjFWTMmSszu13fSvTaN3xUYeYAAW5DWdeQHwhGa634Fd"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/WordCodec.sol": {
+			"keccak256": "0x3d0f1e120aff921b527945f2e5b0cb9d6711535005dfe5219097c93b5210d810",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://af7ef8f38a76708c1dea24d40bd7fefbff54a5481afb36cecbefe1196c8bb270",
+				"dweb:/ipfs/QmZhTdKguxyjyeERxALVgiBRVHRScEByQvmmg98HEVWc5B"
+			]
+		},
+		"pkg/solidity-utils/contracts/math/FixedPoint.sol": {
+			"keccak256": "0x8ecc5369110cef258f46ef4bc1632565efdc130d6962a96fd263f2407d9ab248",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://06d7d6ef18de0fd8bc7ffba0d98fab2fd6054be66c9f8df125c3944564a2a458",
+				"dweb:/ipfs/QmUdhpBehKA1FLKt1DMBYLKLU7hE11DL2gciFaf6njLuM1"
+			]
+		},
+		"pkg/solidity-utils/contracts/math/LogExpMath.sol": {
+			"keccak256": "0x66c6a4efc58bcc18d11fdc3236ec53f6044944918e86116f3aa3deee1daac8ef",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c5deeae731108f0d2fed1ae8c6bcb2796b5a93f6c260019306d175bd3baa2988",
+				"dweb:/ipfs/QmexvLdJbGMSrmaAVrZDaHVfCaAzQpV2ZybQMnfX4zXsPU"
+			]
+		},
+		"pkg/solidity-utils/contracts/math/Math.sol": {
+			"keccak256": "0x29c458d7fb857d1d3c07ef1bf28d54255b6dfca0a80fd5f51316770054bc40db",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://34f3bb04bb1122893ea277493fa42c338ab0309e21e3b6f3f86f3fd53cd5f446",
+				"dweb:/ipfs/QmPsAVc2waLPU9cUQKQTzWCAMX9FcsJagWmas6nRhkMHqw"
+			]
+		},
+		"pkg/solidity-utils/contracts/misc/IWETH.sol": {
+			"keccak256": "0x19a0628bedbe48178a4c90509a40d750d5039677b964ec533a24361a8d97274b",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c55887c89f152f00e5d65389061de28fada0e73eb5f41ebd16a3b8e65846cb1a",
+				"dweb:/ipfs/QmNbVtaA44BGvKnKiCT4bEtjZu1ZD5ZJ6XrgBDh5qVEGcP"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/EIP712.sol": {
+			"keccak256": "0x0cf3ec5d6130aac057e69df14b1ff87baf9c6c2cb13bc545952def004e629ac0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://446419367266d271bf6953e4ae0423356a5cc4717f7b9a5a0532436de4be2d70",
+				"dweb:/ipfs/QmPV56wHs1Mqif6et6TYrhZ2QYPNmiVTmXWvQMhqWfKLk9"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/ERC20.sol": {
+			"keccak256": "0x4bd56e87f0041ba666a540160962cd9f1eed11164a9a91af180550d69da4c8bc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f43b33f08fe77242331b6209b35cf4f40ab38b9a6adae52adbd156603fc7b004",
+				"dweb:/ipfs/QmQDr8qkAwrY5yuVizRbeMnNmaJGoVz8fqEdyKeSi7Z8eU"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/ERC20Permit.sol": {
+			"keccak256": "0x28f96497e4b653b5ae3b3f1f34ce749dab19c1034304f77398c4958e8af7e900",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://70d35af031c4c01aa3b729d97adb529ed29b159fe240df3bb7278f70ac40bed6",
+				"dweb:/ipfs/QmQApANUFNKhfy9PMnHbLh889KDhSpLVyTGn3jeLnmq3xy"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/IERC20.sol": {
+			"keccak256": "0xd828a935a72a6d182912abba290e4debb8c684c36fd756088f7acb30e0b2bb76",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e6ac013b95e9622917c5ad388dc73f0a389a76341597731746e54547aa9de8a",
+				"dweb:/ipfs/QmPB8qWcRPZaDsASgQpf5a6i2YrZ4TDV3Ebi25Mn9EAdf4"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/IERC20Permit.sol": {
+			"keccak256": "0xffe929ce55ef0cbdcc60eee8bc9375c295757ad13afe3d757646538aa0429ff5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://90091ad3a860b0baa930d9b4083b503eb9ce2d222f738ce3b009d434271a27ae",
+				"dweb:/ipfs/QmeQxy2YHbeumMXxKqEnXF7pGw2Ke43cHzttG59WYHibVV"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/SafeMath.sol": {
+			"keccak256": "0xafe0542eb14932a66ce6280fbe9991130ead5bbcb7836d0a822fc4a59810c100",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://140c69f688c58bbf08f7b1b6f76dd89d72f9c84a3aab8ad1194679ee0acaa6e6",
+				"dweb:/ipfs/QmUCub3NpdGK1U4xjSwsCHNZnRokcM9NMhRtC2kLefYef8"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IAsset.sol": {
+			"keccak256": "0x70ecf1d48c285d78718bd2e159345677038ed8a81c74444bedd6a5c61af9aff6",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://8c7c210e449ea5d284abeaaed82e3bb3c203b57d8b3e5dfb6daedf76eaae31d1",
+				"dweb:/ipfs/QmfJWLPhCG6PcHNJMLNDbAM6nd2ZVFCexCXvJ9qQmRaNbn"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IAuthorizer.sol": {
+			"keccak256": "0x792871e208bba1dad291f8d1cffad86f4afa5e2360816bd9c43481f7297155f5",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://af8ab65258e294c8ba0a5feee91208789f641181d225364b02123d38d9eec7d0",
+				"dweb:/ipfs/Qmb5HUXRaSrHJafwK1H8XRjcCTnAZMShTvBNhr1ovA1j2m"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IBasePool.sol": {
+			"keccak256": "0xceae7edca5dc3084127b998c4a5b4c8a01e00777484fb19fcc4d5199adc7f826",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://11d8361fcd0105fecb44028a920404308e2743aa6f63f6802efca1685e326397",
+				"dweb:/ipfs/QmdmBQ2bPLLjTgEj9n3mJwqATRvsYJqwWN8dHqnAePiTox"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IFlashLoanRecipient.sol": {
+			"keccak256": "0x14a7770525d059993696fe3f8f16a660890c2286a54cd12274343956552c5ab2",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://b824c14dc3f9982e2d6ffb9667298d96ae43cbe1e8c5bbce26ae532a559ac72d",
+				"dweb:/ipfs/QmXQUFpjQEuLwfBZQsNzMAKBDHqr8AG3e6T3oQnTLYhukf"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IGeneralPool.sol": {
+			"keccak256": "0x7f11733a5cd8f81c123c02f79d94ead7b65217021ebddafda10e796a25e1ef41",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://7333060b9ff67e1fe734903d45b0c69ff8308b744f7c2fb8fbf630ae9d589bd6",
+				"dweb:/ipfs/Qmf4rZHqsjfKDk5cSp38fv24SS8bAYJxYYQzn63TV6aPCo"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IPoolSwapStructs.sol": {
+			"keccak256": "0x8ff8977dffe8122c5970976cae22478876de8d1242d44c702b3acf7cb2de97c8",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://3284ad64bc9c4314d6fb2343faa65739c8a922e8d1a9852bdc6b773fecf97237",
+				"dweb:/ipfs/QmUTZB3gYsA8KcE6wcRhQ37DvBcJnMJD8oFGyha9h6nrq9"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IProtocolFeesCollector.sol": {
+			"keccak256": "0xc9c9aef7581329c240a2b04603345a5fac3c6e13aea9c6ec98a6237ca046bac0",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://f19ea42c6773f6121b7a85b770acd4fc5a8bc06a040b2a1a3a6d57af5dc0ac74",
+				"dweb:/ipfs/QmNxbM2fDqi4dXkABYyKaEpQewst9R6TBP5u4Ni4BgLWki"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IVault.sol": {
+			"keccak256": "0xaf892b41ff9b1e0864b8960b4cf551e80648ddd91112bb754dea4db2afe41bff",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://09d0c8a724782b150ebf6f96d3f2f87ece596bf44b64c860a9efdb32e75249be",
+				"dweb:/ipfs/QmPRek5D6KyBBd2K2s9o4BCmtNzVgzFAzqwh8jKyebG3JB"
+			]
+		}
+	},
+	"version": 1
+}

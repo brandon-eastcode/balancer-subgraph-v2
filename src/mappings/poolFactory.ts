@@ -16,13 +16,13 @@ import { StablePhantomPool as StablePhantomPoolTemplate } from '../types/templat
 import { ConvergentCurvePool as CCPoolTemplate } from '../types/templates';
 import { LiquidityBootstrappingPool as LiquidityBootstrappingPoolTemplate } from '../types/templates';
 import { InvestmentPool as InvestmentPoolTemplate } from '../types/templates';
-import { AaveLinearPool as LinearPoolTemplate } from '../types/templates';
+import { OlaLinearPool as LinearPoolTemplate } from '../types/templates';
 
 import { Vault } from '../types/Vault/Vault';
 import { WeightedPool } from '../types/templates/WeightedPool/WeightedPool';
 import { StablePool } from '../types/templates/StablePool/StablePool';
 import { ConvergentCurvePool } from '../types/templates/ConvergentCurvePool/ConvergentCurvePool';
-import { AaveLinearPool } from '../types/templates/AaveLinearPool/AaveLinearPool';
+import { OlaLinearPool } from '../types/templates/OlaLinearPool/OlaLinearPool';
 import { ERC20 } from '../types/Vault/ERC20';
 
 function createWeightedLikePool(event: PoolCreated, poolType: string): string {
@@ -64,17 +64,17 @@ function createWeightedLikePool(event: PoolCreated, poolType: string): string {
 
 export function handleNewWeightedPool(event: PoolCreated): void {
   createWeightedLikePool(event, PoolType.Weighted);
-  WeightedPoolTemplate.create(event.params.pool);
+  // WeightedPoolTemplate.create(event.params.pool);
 }
 
 export function handleNewLiquidityBootstrappingPool(event: PoolCreated): void {
   createWeightedLikePool(event, PoolType.LiquidityBootstrapping);
-  LiquidityBootstrappingPoolTemplate.create(event.params.pool);
+  // LiquidityBootstrappingPoolTemplate.create(event.params.pool);
 }
 
 export function handleNewInvestmentPool(event: PoolCreated): void {
   createWeightedLikePool(event, PoolType.Investment);
-  InvestmentPoolTemplate.create(event.params.pool);
+  // InvestmentPoolTemplate.create(event.params.pool);
 }
 
 function createStableLikePool(event: PoolCreated, poolType: string): string {
@@ -119,7 +119,7 @@ export function handleNewStablePool(event: PoolCreated): void {
 
 export function handleNewMetaStablePool(event: PoolCreated): void {
   createStableLikePool(event, PoolType.MetaStable);
-  MetaStablePoolTemplate.create(event.params.pool);
+  // MetaStablePoolTemplate.create(event.params.pool);
 }
 
 export function handleNewStablePhantomPool(event: PoolCreated): void {
@@ -175,13 +175,13 @@ export function handleNewCCPPool(event: PoolCreated): void {
   }
   pool.save();
 
-  CCPoolTemplate.create(poolAddress);
+  // CCPoolTemplate.create(poolAddress);
 }
 
 export function handleNewLinearPool(event: PoolCreated): void {
   let poolAddress: Address = event.params.pool;
 
-  let poolContract = AaveLinearPool.bind(poolAddress);
+  let poolContract = OlaLinearPool.bind(poolAddress);
 
   let poolIdCall = poolContract.try_getPoolId();
   let poolId = poolIdCall.value;

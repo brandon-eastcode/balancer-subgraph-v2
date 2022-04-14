@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"pkg/pool-stable/contracts/StableMath.sol": "StableMath"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"pkg/pool-stable/contracts/StableMath.sol": {
+			"keccak256": "0x60404499d8e06cb06f44ed02f6420b35faa85d6bb400efb3c42c0e1961a9855a",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://e1731b3ecf9a54e71447c4f3ff5e5f2ba00a51d178d04a7f71621d822fe3c013",
+				"dweb:/ipfs/QmVYKaAz47rw5d6UJ89LsqZvmxtGNM8deHesYWjQpqpzi8"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/BalancerErrors.sol": {
+			"keccak256": "0xc9fd86f03fa1434694dd42eddd0d9e4cb3289ef143cae5ea977b86d5e95ad41d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2048e536f51fa3b3f94431da4f3281e3510a06f6947abb173c6b5cd22ec3cce2",
+				"dweb:/ipfs/QmbH6E91rYD5zbS1Zdc4BW391ZysKxV2yLAYCAAMNzRYWr"
+			]
+		},
+		"pkg/solidity-utils/contracts/math/FixedPoint.sol": {
+			"keccak256": "0x8ecc5369110cef258f46ef4bc1632565efdc130d6962a96fd263f2407d9ab248",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://06d7d6ef18de0fd8bc7ffba0d98fab2fd6054be66c9f8df125c3944564a2a458",
+				"dweb:/ipfs/QmUdhpBehKA1FLKt1DMBYLKLU7hE11DL2gciFaf6njLuM1"
+			]
+		},
+		"pkg/solidity-utils/contracts/math/LogExpMath.sol": {
+			"keccak256": "0x66c6a4efc58bcc18d11fdc3236ec53f6044944918e86116f3aa3deee1daac8ef",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c5deeae731108f0d2fed1ae8c6bcb2796b5a93f6c260019306d175bd3baa2988",
+				"dweb:/ipfs/QmexvLdJbGMSrmaAVrZDaHVfCaAzQpV2ZybQMnfX4zXsPU"
+			]
+		},
+		"pkg/solidity-utils/contracts/math/Math.sol": {
+			"keccak256": "0x29c458d7fb857d1d3c07ef1bf28d54255b6dfca0a80fd5f51316770054bc40db",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://34f3bb04bb1122893ea277493fa42c338ab0309e21e3b6f3f86f3fd53cd5f446",
+				"dweb:/ipfs/QmPsAVc2waLPU9cUQKQTzWCAMX9FcsJagWmas6nRhkMHqw"
+			]
+		}
+	},
+	"version": 1
+}

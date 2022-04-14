@@ -317,14 +317,14 @@ dataSources:
         - event: PoolCreated(indexed address)
           handler: handleNewStablePhantomPool
   {{/if}}
-  {{#if AaveLinearPoolFactory}}
+  {{#if OlaLinearPoolFactory}}
   - kind: ethereum/contract
-    name: AaveLinearPoolFactory
+    name: OlaLinearPoolFactory
     network: {{network}}
     source:
-      address: '{{AaveLinearPoolFactory.address}}'
-      abi: AaveLinearPoolFactory
-      startBlock: {{AaveLinearPoolFactory.startBlock}}
+      address: '{{OlaLinearPoolFactory.address}}'
+      abi: OlaLinearPoolFactory
+      startBlock: {{OlaLinearPoolFactory.startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -338,10 +338,10 @@ dataSources:
           file: ./abis/Vault.json
         - name: ERC20
           file: ./abis/ERC20.json
-        - name: AaveLinearPoolFactory
-          file: ./abis/AaveLinearPoolFactory.json
-        - name: AaveLinearPool
-          file: ./abis/AaveLinearPool.json
+        - name: OlaLinearPoolFactory
+          file: ./abis/OlaLinearPoolFactory.json
+        - name: OlaLinearPool
+          file: ./abis/OlaLinearPool.json
       eventHandlers:
         - event: PoolCreated(indexed address)
           handler: handleNewLinearPool
@@ -569,10 +569,10 @@ templates:
         - event: TokenRateCacheUpdated(indexed address,uint256)
           handler: handlePriceRateCacheUpdated
   - kind: ethereum/contract
-    name: AaveLinearPool
+    name: OlaLinearPool
     network: {{network}}
     source:
-      abi: AaveLinearPool
+      abi: OlaLinearPool
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -589,8 +589,8 @@ templates:
           file: ./abis/WeightedPool.json
         - name: MetaStablePool
           file: ./abis/MetaStablePool.json
-        - name: AaveLinearPool
-          file: ./abis/AaveLinearPool.json
+        - name: OlaLinearPool
+          file: ./abis/OlaLinearPool.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer

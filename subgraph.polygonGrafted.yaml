@@ -274,33 +274,6 @@ dataSources:
       eventHandlers:
         - event: PoolCreated(indexed address)
           handler: handleNewStablePhantomPool
-  - kind: ethereum/contract
-    name: AaveLinearPoolFactory
-    network: matic
-    source:
-      address: '0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965'
-      abi: AaveLinearPoolFactory
-      startBlock: 3681582
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      file: ./src/mappings/poolFactory.ts
-      entities:
-        - Balancer
-        - Pool
-      abis:
-        - name: Vault
-          file: ./abis/Vault.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: AaveLinearPoolFactory
-          file: ./abis/AaveLinearPoolFactory.json
-        - name: AaveLinearPool
-          file: ./abis/AaveLinearPool.json
-      eventHandlers:
-        - event: PoolCreated(indexed address)
-          handler: handleNewLinearPool
 templates:
   - kind: ethereum/contract
     name: WeightedPool
@@ -524,10 +497,10 @@ templates:
         - event: TokenRateCacheUpdated(indexed address,uint256)
           handler: handlePriceRateCacheUpdated
   - kind: ethereum/contract
-    name: AaveLinearPool
+    name: OlaLinearPool
     network: matic
     source:
-      abi: AaveLinearPool
+      abi: OlaLinearPool
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -544,8 +517,8 @@ templates:
           file: ./abis/WeightedPool.json
         - name: MetaStablePool
           file: ./abis/MetaStablePool.json
-        - name: AaveLinearPool
-          file: ./abis/AaveLinearPool.json
+        - name: OlaLinearPool
+          file: ./abis/OlaLinearPool.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer

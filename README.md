@@ -143,3 +143,26 @@ Deploy locally
 ```
 yarn deploy:local
 ```
+
+## Running fantom 
+
+Before generating the graph code, make sure the networks.yaml addresses are updated and starting blocks are accurate(usally the block created on)
+
+Generate the graph code
+
+```
+$ yarn codegen
+```
+
+Set up Graph auth
+
+```
+$ graph auth --product hosted-service <ACCESS_TOKEN>
+```
+
+Deploy subgraph
+
+```
+$ graph deploy --product hosted-service <github_user>/<subgraph_name>
+```
+

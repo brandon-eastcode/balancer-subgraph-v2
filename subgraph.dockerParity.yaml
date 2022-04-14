@@ -10,7 +10,7 @@ dataSources:
     source:
       address: '0x8951B163a2CFfa4A19d4285d5293203C0ca3dC54'
       abi: Vault
-      startBlock: 1
+      startBlock: 29589175
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -43,9 +43,9 @@ dataSources:
     name: WeightedPoolFactory
     network: fantom
     source:
-      address: '0xb51CEadC0B36d694Dc14296Caa7BEB746fB5a6E0'
+      address: '0x932A6b7F7A6fd3aA6A27b3003794B2625B21AB08'
       abi: WeightedPoolFactory
-      startBlock: 1
+      startBlock: 30667941
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -70,9 +70,9 @@ dataSources:
     name: StablePoolFactory
     network: fantom
     source:
-      address: '0x27E83a843394c3Fc59DdEa4ce14A53c55A9c91D7'
+      address: '0x019Cd07B615c676e14bc1B460146a563Bf94B3A1'
       abi: StablePoolFactory
-      startBlock: 1
+      startBlock: 29589286
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5

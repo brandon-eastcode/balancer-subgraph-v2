@@ -1,0 +1,793 @@
+{
+	"compiler": {
+		"version": "0.7.1+commit.f4a555be"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "previousAdminRole",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "newAdminRole",
+						"type": "bytes32"
+					}
+				],
+				"name": "RoleAdminChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "where",
+						"type": "address"
+					}
+				],
+				"name": "RoleGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleGrantedGlobally",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "where",
+						"type": "address"
+					}
+				],
+				"name": "RoleRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleRevokedGlobally",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DEFAULT_ADMIN_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "GLOBAL_ROLE_ADMIN",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "actionId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "where",
+						"type": "address"
+					}
+				],
+				"name": "canPerform",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					}
+				],
+				"name": "getRoleAdmin",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getRoleGlobalMember",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					}
+				],
+				"name": "getRoleGlobalMemberCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "where",
+						"type": "address"
+					}
+				],
+				"name": "getRoleMemberByContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "where",
+						"type": "address"
+					}
+				],
+				"name": "getRoleMemberCountByContract",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "where",
+						"type": "address[]"
+					}
+				],
+				"name": "grantRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantRoleGlobally",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "where",
+						"type": "address[]"
+					}
+				],
+				"name": "grantRoles",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantRolesGlobally",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					}
+				],
+				"name": "grantRolesGloballyToMany",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "where",
+						"type": "address[]"
+					}
+				],
+				"name": "grantRolesToMany",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "where",
+						"type": "address"
+					}
+				],
+				"name": "hasRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "where",
+						"type": "address[]"
+					}
+				],
+				"name": "renounceRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "renounceRoleGlobally",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "where",
+						"type": "address[]"
+					}
+				],
+				"name": "revokeRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeRoleGlobally",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "where",
+						"type": "address[]"
+					}
+				],
+				"name": "revokeRoles",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "where",
+						"type": "address[]"
+					}
+				],
+				"name": "revokeRolesFromMany",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeRolesGlobally",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "roles",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					}
+				],
+				"name": "revokeRolesGloballyFromMany",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Basic Authorizer implementation, based on OpenZeppelin's Access Control. Users are allowed to perform actions if they have the role with the same identifier. In this sense, roles are not being truly used as such, since they each map to a single action identifier. This temporary implementation is expected to be replaced soon after launch by a more sophisticated one, able to manage permissions across multiple contracts and to natively handle timelocks.",
+			"kind": "dev",
+			"methods": {
+				"canPerform(bytes32,address,address)": {
+					"details": "Returns true if `account` can perform the action described by `actionId` in the contract `where`."
+				},
+				"getRoleAdmin(bytes32)": {
+					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+				},
+				"getRoleGlobalMember(bytes32,uint256)": {
+					"details": "Returns one of the accounts that have `role` across contracts. `index` must be a value between 0 and {getRoleGlobalMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleGlobalMember} and {getRoleGlobalMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
+				},
+				"getRoleGlobalMemberCount(bytes32)": {
+					"details": "Returns the number of accounts that have `role` as global permission. Can be used together with {getRoleGlobalMember} to enumerate all bearers of a role."
+				},
+				"getRoleMemberByContract(bytes32,uint256,address)": {
+					"details": "Returns one of the accounts that have `role` in contract `where`. `index` must be a value between 0 and {getRoleMemberCountByContract}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMemberByContract} and {getRoleMemberCountByContract}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
+				},
+				"getRoleMemberCountByContract(bytes32,address)": {
+					"details": "Returns the number of accounts that have `role` as global permission. Can be used together with {getRoleGlobalMember} to enumerate all bearers of a role."
+				},
+				"grantRole(bytes32,address,address[])": {
+					"details": "Grants `role` to `account` in specific contracts. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. - list of ``where``'s can't be empty"
+				},
+				"grantRoleGlobally(bytes32,address)": {
+					"details": "Grants `role` to `account` in across all contracts. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role."
+				},
+				"grantRoles(bytes32[],address,address[])": {
+					"details": "Grants multiple roles to a single account for a set of contracts."
+				},
+				"grantRolesGlobally(bytes32[],address)": {
+					"details": "Grants multiple roles to a single account for all contracts."
+				},
+				"grantRolesGloballyToMany(bytes32[],address[])": {
+					"details": "Grants roles to a list of accounts for all contracts."
+				},
+				"grantRolesToMany(bytes32[],address[],address[])": {
+					"details": "Grants roles to a list of accounts for a set of contracts."
+				},
+				"hasRole(bytes32,address,address)": {
+					"details": "Returns `true` if `account` has been granted `role` either globally or in specific `where`"
+				},
+				"renounceRole(bytes32,address,address[])": {
+					"details": "Revokes `role` from the calling account, for specific contracts. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. - list of ``where``'s can't be empty"
+				},
+				"renounceRoleGlobally(bytes32,address)": {
+					"details": "Revokes `role` from the calling account, for all contracts. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`."
+				},
+				"revokeRole(bytes32,address,address[])": {
+					"details": "Revokes `role` from `account` accross all. If `account` had already been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. - list of ``where``'s can't be empty"
+				},
+				"revokeRoleGlobally(bytes32,address)": {
+					"details": "Revokes `role` from `account` across all contracts. If `account` had already been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role."
+				},
+				"revokeRoles(bytes32[],address,address[])": {
+					"details": "Revokes multiple roles from a single account for a set of contracts."
+				},
+				"revokeRolesFromMany(bytes32[],address[],address[])": {
+					"details": "Revokes roles from a list of accounts across a set of contracts"
+				},
+				"revokeRolesGlobally(bytes32[],address)": {
+					"details": "Revokes multiple roles from a single account for all contracts."
+				},
+				"revokeRolesGloballyFromMany(bytes32[],address[])": {
+					"details": "Revokes roles from a list of accounts."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"pkg/vault/contracts/Authorizer.sol": "Authorizer"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"pkg/solidity-utils/contracts/helpers/BalancerErrors.sol": {
+			"keccak256": "0xc9fd86f03fa1434694dd42eddd0d9e4cb3289ef143cae5ea977b86d5e95ad41d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2048e536f51fa3b3f94431da4f3281e3510a06f6947abb173c6b5cd22ec3cce2",
+				"dweb:/ipfs/QmbH6E91rYD5zbS1Zdc4BW391ZysKxV2yLAYCAAMNzRYWr"
+			]
+		},
+		"pkg/solidity-utils/contracts/helpers/InputHelpers.sol": {
+			"keccak256": "0x9899df7be5dfd3e2dd686140de070594c1882ac78529ca8cb2848fc7ddbdcf2e",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://71138e132065c6ed94b815f7efc9c5f556090926d504ba4c6dd7ce93eb7b32fa",
+				"dweb:/ipfs/QmP8DgfkYbdRuaa8YAERpTjf5c5fwZpm9jP6uiz4jw3QoD"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/AccessControl.sol": {
+			"keccak256": "0xfb9b328d8176679f03f15e32d640a4751f020c4070ec15e32e0e203fac889bee",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2ccc7a07d2b2a566ab4e47510419505a0724c0fecec6f5b4e0ce0c686fef231a",
+				"dweb:/ipfs/QmQQBtPvHqUiJ1Q6sbJkDvinU7QANpacUQwAGnjFcVsbfZ"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/EnumerableSet.sol": {
+			"keccak256": "0xb56db592f61071b8be46f2df25aa6af53b473c8ae641b23299b5690f95124da1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://06478aecab30cfa3202a48504273706cac96ed31a0af987040886f577e51b66b",
+				"dweb:/ipfs/QmRJsjhWH6nEXo7dyD1NoNp78pRCenHMJP2GsipJZPDxA4"
+			]
+		},
+		"pkg/solidity-utils/contracts/openzeppelin/IERC20.sol": {
+			"keccak256": "0xd828a935a72a6d182912abba290e4debb8c684c36fd756088f7acb30e0b2bb76",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e6ac013b95e9622917c5ad388dc73f0a389a76341597731746e54547aa9de8a",
+				"dweb:/ipfs/QmPB8qWcRPZaDsASgQpf5a6i2YrZ4TDV3Ebi25Mn9EAdf4"
+			]
+		},
+		"pkg/vault/contracts/Authorizer.sol": {
+			"keccak256": "0x004851c58700fa3bc4559069853107d797ab9af60b8f5bbe7a9f0f695e4928ff",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://9f79c3ee4b81998ea60a2c3879e138e1424866328ca95e06f11e27529ac99de8",
+				"dweb:/ipfs/QmVMRVcPuVY9E4663x5xXaRU51N7xkSjKA3LNr9nNWYTCi"
+			]
+		},
+		"pkg/vault/contracts/interfaces/IAuthorizer.sol": {
+			"keccak256": "0x792871e208bba1dad291f8d1cffad86f4afa5e2360816bd9c43481f7297155f5",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://af8ab65258e294c8ba0a5feee91208789f641181d225364b02123d38d9eec7d0",
+				"dweb:/ipfs/Qmb5HUXRaSrHJafwK1H8XRjcCTnAZMShTvBNhr1ovA1j2m"
+			]
+		}
+	},
+	"version": 1
+}
